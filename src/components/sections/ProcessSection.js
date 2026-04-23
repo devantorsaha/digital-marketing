@@ -16,9 +16,11 @@ export default function ProcessSection() {
                 </div>
                 <div className="flowchart">
                     {steps.map((step, i) => (
-                        <div key={i}>
-                            <div className="flow-step" data-aos="fade-up" data-aos-delay={100 + i * 100}>
-                                <div className="flow-icon"><i className={`fas ${step.icon}`}></i></div>
+                        <div key={i} className="flow-wrapper">
+                            <div className="flow-step" data-aos="fade-up" data-aos-delay={100 + i * 150}>
+                                <div className="flow-icon">
+                                    <i className={`fas ${step.icon}`}></i>
+                                </div>
                                 <div className="flow-content">
                                     <span className="flow-number">{step.number}</span>
                                     <h3>{step.title}</h3>
@@ -29,7 +31,6 @@ export default function ProcessSection() {
                             {i < steps.length - 1 && (
                                 <div className="flow-connector">
                                     <div className="flow-line"></div>
-                                    <div className="flow-arrow"><i className="fas fa-chevron-right"></i></div>
                                 </div>
                             )}
                         </div>
