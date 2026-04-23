@@ -1,0 +1,12 @@
+import mongoose from 'mongoose';
+
+const serviceSchema = new mongoose.Schema({
+    icon: { type: String, required: true },
+    title: { type: String, required: true },
+    description: { type: String, required: true },
+    features: [{ type: String }],
+    displayOrder: { type: Number, default: 0 },
+    isActive: { type: Boolean, default: true }
+}, { timestamps: true });
+
+export default mongoose.models.Service || mongoose.model('Service', serviceSchema);
